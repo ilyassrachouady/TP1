@@ -5,12 +5,15 @@ import org.springframework.stereotype.Component;
 
 @Component("metier")
 public class MetierImpl implements IMetier {
-    public MetierImpl(IDao iDao){
+
+    public MetierImpl(IDao iDao)
+    {
         this.dao = iDao;
     }
-    IDao dao; // loose coupling
+    IDao dao; // low coupling
     @Override
-    public double calculation() {
+    public double calculation()
+    {
         double dummy = dao.getData();
         return dummy * 42;
     }
